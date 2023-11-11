@@ -32,7 +32,7 @@ phases:
       - "mv ./tfsec /usr/local/bin/tfsec"
   build:
     commands:
-      - "cd ${CODEBUILD_SRC_DIR}/${CODE_SRC_DIR}"
+      - "cd ${CODEBUILD_SRC_DIR}/${CODE_SRC_DIR}/dev"
       - "echo ## TERRAFORM INIT : Initialize the Terraform Workspace"
       - "terraform init"
       - "echo ## VALIDATION : Starting ..."
