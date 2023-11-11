@@ -18,7 +18,7 @@ phases:
     commands:
       - "cd ${CODEBUILD_SRC_DIR}/${CODE_SRC_DIR}/dev"
       - "echo ## TERRAFORM PLAN : Generate the Terraform Plan"
-      - "terraform plan -var-file=dev.tfvar -out tfapply"
+      - "terraform plan -var-file=dev.tfvars -out tfapply"
 artifacts:
   files:
     - '**/*'
