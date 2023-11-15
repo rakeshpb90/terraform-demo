@@ -1,7 +1,7 @@
 # Bastion node settings
 bastion_instance_name = "sre-challenge-bastion"
 bastion_instance_type = "t2.micro"
-bastion_ssh_key       = "reshmanew"
+bastion_ssh_key       = "reshma"
 az                    = "us-east-1a"
 bastion_security_group_ids = ["sg-0b65e57572d934340"]
 subnet_id             = "subnet-02b15c1677a635011"
