@@ -18,7 +18,7 @@ bastion_root_block_device = [
 tags = {
   Name        = "sre-challenge-bastion"
   Environment = "Dev"
-  Owner       = "reshmanewwwwyyyyyyyyyyyyyzzzzddddd"
+  Owner       = "reshmanewwwwyyyyyyyyyyyyyzzzzddddddddd"
   Project     = "SRE Challenge"
 }
 
