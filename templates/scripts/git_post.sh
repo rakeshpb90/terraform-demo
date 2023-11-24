@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x 
 # Accept Command Line Arguments
 GITHUB_TOKEN=$1
 PR_NUMBER=$2
