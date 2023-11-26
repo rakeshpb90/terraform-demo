@@ -50,6 +50,8 @@ OUTPUT=$(echo "$FILE_OUTPUT" | grep -v "Refreshing state" | tail -c 60000| jq -s
 # Format the comment as specified
 COMMENT="#### Terraform Format and Style 🖌 ${tfFormatOutput}\n#### Terraform Initialization ⚙️ ${tfInitOutput}\n#### Terraform Validation 🤖 ${tfValidateOutput}\n#### Terraform Plan 📖  ${tfPlanOutput}<details><summary>Show Plan</summary>\n\n\`\`\`hcl\n$OUTPUT\n\`\`\`\n\n</details>"
 
+echo $GITHUB_TOKEN
+
 # Post the comment to the pull request
 curl -X POST \
   -H "Authorization: token $GITHUB_TOKEN" \
