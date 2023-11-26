@@ -1,7 +1,5 @@
-#!/bin/bash -x
-# Accept Command Line Arguments
-GITHUB_TOKEN=$1
-PR_NUMBER=$2
+GITHUB_TOKEN="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"
+PR_NUMBER=6
 
 # Read the content of the text file
 FILE_OUTPUT=$(<terraform_plan_output.txt)
@@ -19,3 +17,4 @@ curl -X POST \
   -d "{\"body\": \"$COMMENT\"}" \
   "https://api.github.com/repos/rakeshpb90/terraform-demo/issues/$PR_NUMBER/comments" \
   -sS
+
