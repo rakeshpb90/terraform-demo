@@ -19,7 +19,7 @@ tags = {
   Name        = "sre-challenge-bastion"
   Environment = "Dev"
   Owner       = "reshma"
-  Project     = "SRE Challengeeeeedddeeeeeddddeeee"
+  Project     = "SRE Challengeeeeedddeeeeedddddddeeee"
 }
 
 create_eip = false
