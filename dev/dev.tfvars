@@ -18,8 +18,8 @@ bastion_root_block_device = [
 tags = {
   Name        = "sre-challenge-bastion"
   Environment = "Dev"
-  Owner       = "reshmanewwwwfffffww"
-  Project     = "SRE Challenge"
+  Owner       = "reshma"
+  Project     = "SRE Challengeeeeedddeeeee"
 }
 
 create_eip = false
