@@ -3,6 +3,14 @@
 GITHUB_TOKEN=$1
 PR_NUMBER=$2
 
+echo "## INIT: Terraform Initialization ..."
+terraform init
+if [ $? -eq 0 ]; then
+    tfInitOutput="SUCCESS"
+else
+    tfInitOutput="FAIL"
+fi
+
 
 echo "## FORMATTING: Formatting Terraform code ..."
 terraform fmt -check
@@ -18,14 +26,6 @@ if [ $? -eq 0 ]; then
     tfValidateOutput="SUCCESS"
 else
     tfValidateOutput="FAIL"
-fi
-
-echo "## INIT: Terraform Initialization ..."
-terraform init
-if [ $? -eq 0 ]; then
-    tfInitOutput="SUCCESS"
-else
-    tfInitOutput="FAIL"
 fi
 
 echo "## PLAN: Generate the Terraform Plan"
