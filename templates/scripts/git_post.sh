@@ -11,7 +11,11 @@ OUTPUT=$(echo "$FILE_OUTPUT" | grep -v "Refreshing state" | tail -c 60000| jq -s
 
 echo "## VALIDATION : Formatting Terraform code ..."
 terraform fmt -check
-tfFormatOutput=$?
+if [ $? -eq 0 ]; then
+    tfFormatOutput="SUCESS"
+else
+    tfFormatOutput="FAIL"
+fi
 
 
 echo "## VALIDATION : Validating Terraform code ..."
