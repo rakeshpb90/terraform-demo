@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    GITHUB_TOKEN: "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"
+    GITHUB_TOKEN: "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"
     CODE_SRC_DIR: "."
     TF_VERSION: "1.3.7"
 
