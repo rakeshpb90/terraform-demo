@@ -21,4 +21,3 @@ phases:
       - "cd ${CODEBUILD_SRC_DIR}/${CODE_SRC_DIR}/dev"
       - PR_NUMBER=$(echo $CODEBUILD_WEBHOOK_TRIGGER | cut -d'/' -f2)
       - /bin/bash ${CODEBUILD_SRC_DIR}/templates/scripts/terraform_command.sh ${GITHUB_TOKEN} ${PR_NUMBER}
-
