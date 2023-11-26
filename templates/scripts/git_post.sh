@@ -9,9 +9,17 @@ FILE_OUTPUT=$(<terraform_plan_output.txt)
 # Escape special characters in the text for JSON
 OUTPUT=$(echo "$FILE_OUTPUT" | grep -v "Refreshing state" | tail -c 60000| jq -s -R '.' | sed 's/^"\(.*\)"$/\1/')
 
+echo "## VALIDATION : Formatting Terraform code ..."
+terraform fmt -check
+tfFormatOutput=$?
+
+
+echo "## VALIDATION : Validating Terraform code ..."
+terraform validate
+tfValidateOutput=$?
 
 # Format the comment as specified
-COMMENT="#### Terraform Format and Style 🖌\n#### Terraform Initialization ⚙️\n#### Terraform Validation 🤖\n#### Terraform Plan 📖 <details><summary>Show Plan</summary>\n\n\`\`\`hcl\n$OUTPUT\n\`\`\`\n\n</details>"
+COMMENT="#### Terraform Format and Style 🖌\`${tfFormatOutput}`\\n#### Terraform Initialization ⚙️\n#### Terraform Validation 🤖\n#### Terraform Plan 📖 <details><summary>Show Plan</summary>\n\n\`\`\`hcl\n$OUTPUT\n\`\`\`\n\n</details>"
 
 # Post the comment to the pull request
 curl -X POST \
