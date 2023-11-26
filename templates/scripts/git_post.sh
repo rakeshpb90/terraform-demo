@@ -19,3 +19,4 @@ curl -X POST \
   -d "{\"body\": \"$COMMENT\"}" \
   "https://api.github.com/repos/rakeshpb90/terraform-demo/issues/$PR_NUMBER/comments" \
   -sS
+
